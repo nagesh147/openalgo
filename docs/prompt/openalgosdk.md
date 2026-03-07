@@ -20,16 +20,16 @@ First, import the `api` class from the OpenAlgo library and initialize it with y
 from openalgo import api
 
 # Replace 'your_api_key_here' with your actual API key
-# Specify the host URL with your hosted domain or ngrok domain. 
-# If running locally in windows then use the default host value. 
-client = api(api_key='your_api_key_here', host='http://127.0.0.1:5000')
+# Specify the host URL with your hosted domain or ngrok domain.
+# If running locally in windows then use the default host value.
+client = api(api_key='f4de80b0', host='http://127.0.0.1:5000')
 
 ```
 
 ### Check OpenAlgo Version
 
 ```python
-import openalgo 
+import openalgo
 openalgo.__version__
 ```
 
@@ -58,7 +58,7 @@ print(response)
 Place Market Order Response
 
 ```json
-{'orderid': '250408000989443', 'status': 'success'}
+{ "orderid": "250408000989443", "status": "success" }
 ```
 
 To place a new limit order:
@@ -82,7 +82,7 @@ print(response)
 Place Limit Order Response
 
 ```json
-{'orderid': '250408001003813', 'status': 'success'}
+{ "orderid": "250408001003813", "status": "success" }
 ```
 
 ### PlaceSmartOrder Example
@@ -107,7 +107,7 @@ print(response)
 Place Smart Market Order Response
 
 ```json
-{'orderid': '250408000997543', 'status': 'success'}
+{ "orderid": "250408000997543", "status": "success" }
 ```
 
 ### OptionsOrder Example
@@ -243,53 +243,52 @@ Place OptionsMultiOrder Response
 
 ```json
 {
-    'status': 'success',
-    'underlying': 'NIFTY',
-    'underlying_ltp': 26050.45,
-    'results': [
-        {
-            'action': 'BUY',
-            'leg': 1,
-            'mode': 'analyze',
-            'offset': 'OTM6',
-            'option_type': 'CE',
-            'orderid': '25111996859688',
-            'status': 'success',
-            'symbol': 'NIFTY25NOV2526350CE'
-        },
-        {
-            'action': 'BUY',
-            'leg': 2,
-            'mode': 'analyze',
-            'offset': 'OTM6',
-            'option_type': 'PE',
-            'orderid': '25111996042210',
-            'status': 'success',
-            'symbol': 'NIFTY25NOV2525750PE'
-        },
-        {
-            'action': 'SELL',
-            'leg': 3,
-            'mode': 'analyze',
-            'offset': 'OTM4',
-            'option_type': 'CE',
-            'orderid': '25111922189638',
-            'status': 'success',
-            'symbol': 'NIFTY25NOV2526250CE'
-        },
-        {
-            'action': 'SELL',
-            'leg': 4,
-            'mode': 'analyze',
-            'offset': 'OTM4',
-            'option_type': 'PE',
-            'orderid': '25111919252668',
-            'status': 'success',
-            'symbol': 'NIFTY25NOV2525850PE'
-        }
-    ]
+  "status": "success",
+  "underlying": "NIFTY",
+  "underlying_ltp": 26050.45,
+  "results": [
+    {
+      "action": "BUY",
+      "leg": 1,
+      "mode": "analyze",
+      "offset": "OTM6",
+      "option_type": "CE",
+      "orderid": "25111996859688",
+      "status": "success",
+      "symbol": "NIFTY25NOV2526350CE"
+    },
+    {
+      "action": "BUY",
+      "leg": 2,
+      "mode": "analyze",
+      "offset": "OTM6",
+      "option_type": "PE",
+      "orderid": "25111996042210",
+      "status": "success",
+      "symbol": "NIFTY25NOV2525750PE"
+    },
+    {
+      "action": "SELL",
+      "leg": 3,
+      "mode": "analyze",
+      "offset": "OTM4",
+      "option_type": "CE",
+      "orderid": "25111922189638",
+      "status": "success",
+      "symbol": "NIFTY25NOV2526250CE"
+    },
+    {
+      "action": "SELL",
+      "leg": 4,
+      "mode": "analyze",
+      "offset": "OTM4",
+      "option_type": "PE",
+      "orderid": "25111919252668",
+      "status": "success",
+      "symbol": "NIFTY25NOV2525850PE"
+    }
+  ]
 }
-
 ```
 
 To place Diagonal Spread options order (Different Expiry)
@@ -313,33 +312,32 @@ Place OptionsMultiOrder Response
 
 ```json
 {
-    "results": [
-        {
-            "action": "BUY",
-            "leg": 1,
-            "mode": "analyze",
-            "offset": "ITM2",
-            "option_type": "CE",
-            "orderid": "25111933337854",
-            "status": "success",
-            "symbol": "NIFTY30DEC2525950CE"
-        },
-        {
-            "action": "SELL",
-            "leg": 2,
-            "mode": "analyze",
-            "offset": "OTM2",
-            "option_type": "CE",
-            "orderid": "25111957475473",
-            "status": "success",
-            "symbol": "NIFTY25NOV2526150CE"
-        }
-    ],
-    "status": "success",
-    "underlying": "NIFTY",
-    "underlying_ltp": 26052.65
+  "results": [
+    {
+      "action": "BUY",
+      "leg": 1,
+      "mode": "analyze",
+      "offset": "ITM2",
+      "option_type": "CE",
+      "orderid": "25111933337854",
+      "status": "success",
+      "symbol": "NIFTY30DEC2525950CE"
+    },
+    {
+      "action": "SELL",
+      "leg": 2,
+      "mode": "analyze",
+      "offset": "OTM2",
+      "option_type": "CE",
+      "orderid": "25111957475473",
+      "status": "success",
+      "symbol": "NIFTY25NOV2526150CE"
+    }
+  ],
+  "status": "success",
+  "underlying": "NIFTY",
+  "underlying_ltp": 26052.65
 }
-
 ```
 
 ### BasketOrder example
@@ -387,7 +385,6 @@ print(response)
     }
   ]
 }
-
 ```
 
 ### SplitOrder example
@@ -454,7 +451,6 @@ print(response)
     }
   ]
 }
-
 ```
 
 ### ModifyOrder Example
@@ -479,7 +475,7 @@ print(response)
 **Modify Order Response**
 
 ```json
-{'orderid': '250408001002736', 'status': 'success'}
+{ "orderid": "250408001002736", "status": "success" }
 ```
 
 ### CancelOrder Example
@@ -497,7 +493,7 @@ print(response)
 **Cancelorder Response**
 
 ```json
-{'orderid': '250408001002736', 'status': 'success'}
+{ "orderid": "250408001002736", "status": "success" }
 ```
 
 ### CancelAllOrder Example
@@ -526,7 +522,6 @@ print(response)
   ],
   "failed_cancellations": []
 }
-
 ```
 
 ### ClosePosition Example
@@ -543,7 +538,7 @@ print(response)
 **ClosePosition Response**
 
 ```json
-{'message': 'All Open Positions Squared Off', 'status': 'success'}
+{ "message": "All Open Positions Squared Off", "status": "success" }
 ```
 
 ### OrderStatus Example
@@ -597,7 +592,7 @@ print(response)
 OpenPosition Response
 
 ```json
-{'quantity': '-10', 'status': 'success'}
+{ "quantity": "-10", "status": "success" }
 ```
 
 ### Quotes Example
@@ -690,7 +685,6 @@ print(response)
     }
   ]
 }
-
 ```
 
 ### Depth Example
@@ -762,16 +756,15 @@ print(response)
     ]
   }
 }
-
 ```
 
 ### History Example
 
 ```python
-response = client.history(symbol="SBIN", 
-    exchange="NSE", 
-    interval="5m", 
-    start_date="2025-04-01", 
+response = client.history(symbol="SBIN",
+    exchange="NSE",
+    interval="5m",
+    start_date="2025-04-01",
     end_date="2025-04-08"
     )
 print(response)
@@ -781,7 +774,7 @@ print(response)
 
 ```json
                             close    high     low    open  volume
-timestamp                                                        
+timestamp
 2025-04-01 09:15:00+05:30  772.50  774.00  763.20  766.50  318625
 2025-04-01 09:20:00+05:30  773.20  774.95  772.10  772.45  197189
 2025-04-01 09:25:00+05:30  775.15  775.60  772.60  773.20  227544
@@ -822,7 +815,7 @@ print(response)
 
 ### OptionChain Example
 
-Note : To fetch entire option chain for a expiry remove the strike\_count (optional) parameter
+Note : To fetch entire option chain for a expiry remove the strike_count (optional) parameter
 
 ```python
 chain = client.optionchain(
@@ -837,180 +830,179 @@ chain = client.optionchain(
 
 ```json
 {
-    "status": "success",
-    "underlying": "NIFTY",
-    "underlying_ltp": 26215.55,
-    "expiry_date": "30DEC25",
-    "atm_strike": 26200.0,
-    "chain": [
-        {
-            "strike": 26100.0,
-            "ce": {
-                "symbol": "NIFTY30DEC2526100CE",
-                "label": "ITM2",
-                "ltp": 490,
-                "bid": 490,
-                "ask": 491,
-                "open": 540,
-                "high": 571,
-                "low": 444.75,
-                "prev_close": 496.8,
-                "volume": 1195800,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            },
-            "pe": {
-                "symbol": "NIFTY30DEC2526100PE",
-                "label": "OTM2",
-                "ltp": 193,
-                "bid": 191.2,
-                "ask": 193,
-                "open": 204.1,
-                "high": 229.95,
-                "low": 175.6,
-                "prev_close": 215.95,
-                "volume": 1832700,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            }
-        },
-        {
-            "strike": 26150.0,
-            "ce": {
-                "symbol": "NIFTY30DEC2526150CE",
-                "label": "ITM1",
-                "ltp": 460.5,
-                "bid": 452.9,
-                "ask": 463,
-                "open": 475.8,
-                "high": 535.7,
-                "low": 414.6,
-                "prev_close": 461.05,
-                "volume": 183525,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            },
-            "pe": {
-                "symbol": "NIFTY30DEC2526150PE",
-                "label": "OTM1",
-                "ltp": 208.5,
-                "bid": 207.85,
-                "ask": 210.1,
-                "open": 218.2,
-                "high": 248.8,
-                "low": 190.75,
-                "prev_close": 233.7,
-                "volume": 332100,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            }
-        },
-        {
-            "strike": 26200.0,
-            "ce": {
-                "symbol": "NIFTY30DEC2526200CE",
-                "label": "ATM",
-                "ltp": 427,
-                "bid": 425.05,
-                "ask": 427,
-                "open": 449.95,
-                "high": 503.5,
-                "low": 384,
-                "prev_close": 433.2,
-                "volume": 2994000,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            },
-            "pe": {
-                "symbol": "NIFTY30DEC2526200PE",
-                "label": "ATM",
-                "ltp": 227.4,
-                "bid": 227.35,
-                "ask": 228.5,
-                "open": 251.9,
-                "high": 269.15,
-                "low": 205.95,
-                "prev_close": 251.9,
-                "volume": 3745350,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            }
-        },
-        {
-            "strike": 26250.0,
-            "ce": {
-                "symbol": "NIFTY30DEC2526250CE",
-                "label": "OTM1",
-                "ltp": 398,
-                "bid": 395.4,
-                "ask": 400.5,
-                "open": 442.1,
-                "high": 468.5,
-                "low": 355.75,
-                "prev_close": 401.9,
-                "volume": 407100,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            },
-            "pe": {
-                "symbol": "NIFTY30DEC2526250PE",
-                "label": "ITM1",
-                "ltp": 243.85,
-                "bid": 243.6,
-                "ask": 246.15,
-                "open": 264.25,
-                "high": 288,
-                "low": 222.15,
-                "prev_close": 269.7,
-                "volume": 487575,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            }
-        },
-        {
-            "strike": 26300.0,
-            "ce": {
-                "symbol": "NIFTY30DEC2526300CE",
-                "label": "OTM2",
-                "ltp": 367.55,
-                "bid": 364,
-                "ask": 367.55,
-                "open": 378,
-                "high": 437.4,
-                "low": 327.25,
-                "prev_close": 371.45,
-                "volume": 2416350,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            },
-            "pe": {
-                "symbol": "NIFTY30DEC2526300PE",
-                "label": "ITM2",
-                "ltp": 266,
-                "bid": 264.2,
-                "ask": 266.5,
-                "open": 263.1,
-                "high": 311.55,
-                "low": 240,
-                "prev_close": 289.85,
-                "volume": 2891100,
-                "oi": 0,
-                "lotsize": 75,
-                "tick_size": 0.05
-            }
-        }
-    ]
+  "status": "success",
+  "underlying": "NIFTY",
+  "underlying_ltp": 26215.55,
+  "expiry_date": "30DEC25",
+  "atm_strike": 26200.0,
+  "chain": [
+    {
+      "strike": 26100.0,
+      "ce": {
+        "symbol": "NIFTY30DEC2526100CE",
+        "label": "ITM2",
+        "ltp": 490,
+        "bid": 490,
+        "ask": 491,
+        "open": 540,
+        "high": 571,
+        "low": 444.75,
+        "prev_close": 496.8,
+        "volume": 1195800,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      },
+      "pe": {
+        "symbol": "NIFTY30DEC2526100PE",
+        "label": "OTM2",
+        "ltp": 193,
+        "bid": 191.2,
+        "ask": 193,
+        "open": 204.1,
+        "high": 229.95,
+        "low": 175.6,
+        "prev_close": 215.95,
+        "volume": 1832700,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      }
+    },
+    {
+      "strike": 26150.0,
+      "ce": {
+        "symbol": "NIFTY30DEC2526150CE",
+        "label": "ITM1",
+        "ltp": 460.5,
+        "bid": 452.9,
+        "ask": 463,
+        "open": 475.8,
+        "high": 535.7,
+        "low": 414.6,
+        "prev_close": 461.05,
+        "volume": 183525,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      },
+      "pe": {
+        "symbol": "NIFTY30DEC2526150PE",
+        "label": "OTM1",
+        "ltp": 208.5,
+        "bid": 207.85,
+        "ask": 210.1,
+        "open": 218.2,
+        "high": 248.8,
+        "low": 190.75,
+        "prev_close": 233.7,
+        "volume": 332100,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      }
+    },
+    {
+      "strike": 26200.0,
+      "ce": {
+        "symbol": "NIFTY30DEC2526200CE",
+        "label": "ATM",
+        "ltp": 427,
+        "bid": 425.05,
+        "ask": 427,
+        "open": 449.95,
+        "high": 503.5,
+        "low": 384,
+        "prev_close": 433.2,
+        "volume": 2994000,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      },
+      "pe": {
+        "symbol": "NIFTY30DEC2526200PE",
+        "label": "ATM",
+        "ltp": 227.4,
+        "bid": 227.35,
+        "ask": 228.5,
+        "open": 251.9,
+        "high": 269.15,
+        "low": 205.95,
+        "prev_close": 251.9,
+        "volume": 3745350,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      }
+    },
+    {
+      "strike": 26250.0,
+      "ce": {
+        "symbol": "NIFTY30DEC2526250CE",
+        "label": "OTM1",
+        "ltp": 398,
+        "bid": 395.4,
+        "ask": 400.5,
+        "open": 442.1,
+        "high": 468.5,
+        "low": 355.75,
+        "prev_close": 401.9,
+        "volume": 407100,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      },
+      "pe": {
+        "symbol": "NIFTY30DEC2526250PE",
+        "label": "ITM1",
+        "ltp": 243.85,
+        "bid": 243.6,
+        "ask": 246.15,
+        "open": 264.25,
+        "high": 288,
+        "low": 222.15,
+        "prev_close": 269.7,
+        "volume": 487575,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      }
+    },
+    {
+      "strike": 26300.0,
+      "ce": {
+        "symbol": "NIFTY30DEC2526300CE",
+        "label": "OTM2",
+        "ltp": 367.55,
+        "bid": 364,
+        "ask": 367.55,
+        "open": 378,
+        "high": 437.4,
+        "low": 327.25,
+        "prev_close": 371.45,
+        "volume": 2416350,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      },
+      "pe": {
+        "symbol": "NIFTY30DEC2526300PE",
+        "label": "ITM2",
+        "ltp": 266,
+        "bid": 264.2,
+        "ask": 266.5,
+        "open": 263.1,
+        "high": 311.55,
+        "low": 240,
+        "prev_close": 289.85,
+        "volume": 2891100,
+        "oi": 0,
+        "lotsize": 75,
+        "tick_size": 0.05
+      }
+    }
+  ]
 }
-
 ```
 
 ### Symbol Example
@@ -1287,7 +1279,7 @@ response = client.optiongreeks(
 print(response)
 ```
 
-OptionGreeks  **Response**
+OptionGreeks **Response**
 
 ```
 {
@@ -1360,18 +1352,18 @@ Instruments **Response**
 
 ```json
      brexchange           brsymbol exchange expiry instrumenttype  lotsize  \
-3041        NSE      NSE:NEOGEN-EQ      NSE   None             EQ        1   
-3042        NSE     NSE:ALANKIT-EQ      NSE   None             EQ        1   
-3043        NSE  NSE:EVERESTIND-EQ      NSE   None             EQ        1   
-3044        NSE   NSE:VIKASLIFE-EQ      NSE   None             EQ        1   
-3045        NSE    NSE:ONEPOINT-EQ      NSE   None             EQ        1   
+3041        NSE      NSE:NEOGEN-EQ      NSE   None             EQ        1
+3042        NSE     NSE:ALANKIT-EQ      NSE   None             EQ        1
+3043        NSE  NSE:EVERESTIND-EQ      NSE   None             EQ        1
+3044        NSE   NSE:VIKASLIFE-EQ      NSE   None             EQ        1
+3045        NSE    NSE:ONEPOINT-EQ      NSE   None             EQ        1
 
-                          name  strike      symbol  tick_size           token  
-3041  NEOGEN CHEMICALS LIMITED    -1.0      NEOGEN       0.10  10100000009917  
-3042           ALANKIT LIMITED    -1.0     ALANKIT       0.01  10100000009921  
-3043    EVEREST INDUSTRIES LTD    -1.0  EVERESTIND       0.05   1010000000993  
-3044    VIKAS LIFECARE LIMITED    -1.0   VIKASLIFE       0.01  10100000009931  
-3045     ONE POINT ONE SOL LTD    -1.0    ONEPOINT       0.01  10100000009939  
+                          name  strike      symbol  tick_size           token
+3041  NEOGEN CHEMICALS LIMITED    -1.0      NEOGEN       0.10  10100000009917
+3042           ALANKIT LIMITED    -1.0     ALANKIT       0.01  10100000009921
+3043    EVEREST INDUSTRIES LTD    -1.0  EVERESTIND       0.05   1010000000993
+3044    VIKAS LIFECARE LIMITED    -1.0   VIKASLIFE       0.01  10100000009931
+3045     ONE POINT ONE SOL LTD    -1.0    ONEPOINT       0.01  10100000009939
 ```
 
 ### Telegram Alert Example
@@ -1414,7 +1406,6 @@ print(response)
     "utiliseddebits": "679.34"
   }
 }
-
 ```
 
 ### Margin Example
@@ -1444,12 +1435,12 @@ response = client.margin(positions=[
 
 ```json
 {
-    "status": "success",
-    "data": {
-      "total_margin_required": 91555.7625,
-      "span_margin": 0.0,
-      "exposure_margin": 91555.7625
-    }
+  "status": "success",
+  "data": {
+    "total_margin_required": 91555.7625,
+    "span_margin": 0.0,
+    "exposure_margin": 91555.7625
+  }
 }
 ```
 
@@ -1501,7 +1492,6 @@ print(response)
     }
   }
 }
-
 ```
 
 ### TradeBook Example
@@ -1586,7 +1576,6 @@ print(response)
     }
   ]
 }
-
 ```
 
 ### Holdings Example
@@ -1636,7 +1625,6 @@ Holdings Response
     }
   }
 }
-
 ```
 
 ### Holidays Example
@@ -1685,22 +1673,45 @@ print(response)
 #### Timings Response
 
 ```json
-{'data': [
-    {'end_time': 1766138400000, 'exchange': 'NSE', 'start_time': 1766115900000
+{
+  "data": [
+    {
+      "end_time": 1766138400000,
+      "exchange": "NSE",
+      "start_time": 1766115900000
     },
-    {'end_time': 1766138400000, 'exchange': 'BSE', 'start_time': 1766115900000
+    {
+      "end_time": 1766138400000,
+      "exchange": "BSE",
+      "start_time": 1766115900000
     },
-    {'end_time': 1766138400000, 'exchange': 'NFO', 'start_time': 1766115900000
+    {
+      "end_time": 1766138400000,
+      "exchange": "NFO",
+      "start_time": 1766115900000
     },
-    {'end_time': 1766138400000, 'exchange': 'BFO', 'start_time': 1766115900000
+    {
+      "end_time": 1766138400000,
+      "exchange": "BFO",
+      "start_time": 1766115900000
     },
-    {'end_time': 1766168700000, 'exchange': 'MCX', 'start_time': 1766115000000
+    {
+      "end_time": 1766168700000,
+      "exchange": "MCX",
+      "start_time": 1766115000000
     },
-    {'end_time': 1766143800000, 'exchange': 'BCD', 'start_time': 1766115000000
+    {
+      "end_time": 1766143800000,
+      "exchange": "BCD",
+      "start_time": 1766115000000
     },
-    {'end_time': 1766143800000, 'exchange': 'CDS', 'start_time': 1766115000000
+    {
+      "end_time": 1766143800000,
+      "exchange": "CDS",
+      "start_time": 1766115000000
     }
-  ], 'status': 'success'
+  ],
+  "status": "success"
 }
 ```
 

@@ -120,11 +120,11 @@ def start_strategy(strategy_id):
 
 ### Cross-Platform Support
 
-| Platform | Support | Notes |
-|----------|---------|-------|
-| Windows | Full | Uses subprocess |
-| Linux | Full | Uses subprocess |
-| macOS | Full | Uses subprocess |
+| Platform | Support | Notes           |
+| -------- | ------- | --------------- |
+| Windows  | Full    | Uses subprocess |
+| Linux    | Full    | Uses subprocess |
+| macOS    | Full    | Uses subprocess |
 
 ```python
 OS_TYPE = platform.system().lower()  # 'windows', 'linux', 'darwin'
@@ -202,12 +202,12 @@ def init_scheduler():
 
 ### Schedule Options
 
-| Schedule Type | Description | Example |
-|---------------|-------------|---------|
-| One-time | Start at specific time | 09:15 IST |
-| Interval | Repeat at fixed interval | Every 5 minutes |
-| Cron | Complex scheduling | Weekdays at 09:15 |
-| Market Hours | Only during trading | 09:15 - 15:30 |
+| Schedule Type | Description              | Example           |
+| ------------- | ------------------------ | ----------------- |
+| One-time      | Start at specific time   | 09:15 IST         |
+| Interval      | Repeat at fixed interval | Every 5 minutes   |
+| Cron          | Complex scheduling       | Weekdays at 09:15 |
+| Market Hours  | Only during trading      | 09:15 - 15:30     |
 
 ### Market-Aware Scheduling
 
@@ -257,12 +257,12 @@ def verify_strategy_ownership(strategy_id, user_id, return_config=False):
 
 ### Security Features
 
-| Feature | Implementation |
-|---------|----------------|
-| User isolation | Each user sees only their strategies |
+| Feature                   | Implementation                        |
+| ------------------------- | ------------------------------------- |
+| User isolation            | Each user sees only their strategies  |
 | Path traversal protection | Reject `..`, `/`, `\` in strategy IDs |
-| Secure filename | `werkzeug.utils.secure_filename()` |
-| Process isolation | Separate subprocess per strategy |
+| Secure filename           | `werkzeug.utils.secure_filename()`    |
+| Process isolation         | Separate subprocess per strategy      |
 
 ## Server-Sent Events (SSE)
 
@@ -290,17 +290,17 @@ def broadcast_status_update(strategy_id: str, status: str, message: str = None):
 
 ## API Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/python/` | GET | List all strategies |
-| `/python/upload` | POST | Upload new strategy |
-| `/python/start/<id>` | POST | Start a strategy |
-| `/python/stop/<id>` | POST | Stop a strategy |
-| `/python/schedule/<id>` | POST | Schedule a strategy |
-| `/python/delete/<id>` | DELETE | Delete a strategy |
-| `/python/logs/<id>` | GET | Get strategy logs |
-| `/python/status/<id>` | GET | Get strategy status |
-| `/python/events` | GET | SSE status stream |
+| Endpoint                | Method | Description         |
+| ----------------------- | ------ | ------------------- |
+| `/python/`              | GET    | List all strategies |
+| `/python/upload`        | POST   | Upload new strategy |
+| `/python/start/<id>`    | POST   | Start a strategy    |
+| `/python/stop/<id>`     | POST   | Stop a strategy     |
+| `/python/schedule/<id>` | POST   | Schedule a strategy |
+| `/python/delete/<id>`   | DELETE | Delete a strategy   |
+| `/python/logs/<id>`     | GET    | Get strategy logs   |
+| `/python/status/<id>`   | GET    | Get strategy status |
+| `/python/events`        | GET    | SSE status stream   |
 
 ## Configuration Persistence
 
@@ -349,7 +349,7 @@ import signal
 import sys
 
 # Configuration
-API_KEY = "your_api_key_here"
+API_KEY = "f4de80b0"
 BASE_URL = "http://localhost:5000/api/v1"
 
 running = True
@@ -431,22 +431,22 @@ STRATEGY_MEMORY_LIMIT_MB = int(os.environ.get('STRATEGY_MEMORY_LIMIT_MB', '1024'
 ```
 
 | Container RAM | Recommended Limit | Max Concurrent Strategies |
-|---------------|-------------------|---------------------------|
-| 2GB | 256MB | 5 |
-| 4GB | 512MB | 5-8 |
-| 8GB+ | 1024MB (default) | 10+ |
+| ------------- | ----------------- | ------------------------- |
+| 2GB           | 256MB             | 5                         |
+| 4GB           | 512MB             | 5-8                       |
+| 8GB+          | 1024MB (default)  | 10+                       |
 
 ### Thread Limiting for Docker
 
 When running strategies with numerical libraries (NumPy, SciPy, Numba) in Docker, thread limits prevent `RLIMIT_NPROC` exhaustion:
 
-| Variable | Purpose |
-|----------|---------|
-| `OPENBLAS_NUM_THREADS` | OpenBLAS thread limit |
-| `OMP_NUM_THREADS` | OpenMP thread limit |
-| `MKL_NUM_THREADS` | Intel MKL thread limit |
-| `NUMEXPR_NUM_THREADS` | NumExpr thread limit |
-| `NUMBA_NUM_THREADS` | Numba JIT thread limit |
+| Variable               | Purpose                |
+| ---------------------- | ---------------------- |
+| `OPENBLAS_NUM_THREADS` | OpenBLAS thread limit  |
+| `OMP_NUM_THREADS`      | OpenMP thread limit    |
+| `MKL_NUM_THREADS`      | Intel MKL thread limit |
+| `NUMEXPR_NUM_THREADS`  | NumExpr thread limit   |
+| `NUMBA_NUM_THREADS`    | Numba JIT thread limit |
 
 For 2GB containers, set all to `1`. For 4GB+, use `2`. See [Docker Configuration](../11-docker/README.md) for details.
 
@@ -454,10 +454,10 @@ For 2GB containers, set all to `1`. For 4GB+, use `2`. See [Docker Configuration
 
 ## Key Files Reference
 
-| File | Purpose |
-|------|---------|
-| `blueprints/python_strategy.py` | Strategy hosting blueprint |
-| `strategies/scripts/` | User strategy files |
-| `strategies/strategy_configs.json` | Configuration persistence |
-| `log/strategies/` | Strategy log output |
-| `database/market_calendar_db.py` | Market hours/holidays |
+| File                               | Purpose                    |
+| ---------------------------------- | -------------------------- |
+| `blueprints/python_strategy.py`    | Strategy hosting blueprint |
+| `strategies/scripts/`              | User strategy files        |
+| `strategies/strategy_configs.json` | Configuration persistence  |
+| `log/strategies/`                  | Strategy log output        |
+| `database/market_calendar_db.py`   | Market hours/holidays      |
