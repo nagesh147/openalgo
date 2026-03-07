@@ -51,7 +51,13 @@ git fetch origin
 
 echo "Syncing main with upstream/main..."
 git switch main >/dev/null
-git merge --ff-only upstream/main
+
+if git merge-base --is-ancestor upstream/main main >/dev/null 2>&1; then
+  git merge --ff-only upstream/main
+else
+  echo "upstream/main is behind local main; skipping fast-forward."
+fi
+
 git push origin main
 
 echo "Syncing development from main using $strategy..."
